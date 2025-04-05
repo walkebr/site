@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Alunos Renovame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestão de Alunos Renovame</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch" checked>
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-sun"></i>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3>Total de Alunos</h3>
+                            <p id="total-students">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-church"></i>
+                        <div class="stat-info">
+                            <h3>Frequência Regular</h3>
+                            <p id="regular-attendance">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="stat-info">
+                            <h3>Ausentes</h3>
+                            <p id="absent-students">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls">
+                <div class="action-buttons">
+                    <button id="add-student-btn" class="btn primary"><i class="fas fa-plus"></i> Adicionar Aluno</button>
+                    <div class="data-actions">
+                        <button id="export-btn" class="btn secondary"><i class="fas fa-download"></i> Exportar</button>
+                        <label for="import-file" class="btn secondary"><i class="fas fa-upload"></i> Importar</label>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                    </div>
+                </div>
+                <div class="search-filter">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Buscar alunos...">
+                    </div>
+                    <select id="filter-status">
+                        <option value="all">Todos os Status</option>
+                        <option value="regular">Frequência Regular</option>
+                        <option value="irregular">Frequência Irregular</option>
+                        <option value="absent">Ausente</option>
+                    </select>
+                    <select id="filter-age">
+                        <option value="all">Todas as Idades</option>
+                        <option value="0-5">0-5 anos</option>
+                        <option value="6-10">6-10 anos</option>
+                        <option value="11-15">11-15 anos</option>
+                        <option value="16+">16+ anos</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="students-container">
+                <div id="students-list" class="students-grid">
+                    <!-- Students will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal for adding new student -->
+        <div id="add-student-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Adicionar Novo Aluno</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="add-student-form">
+                        <div class="form-group">
+                            <label for="student-name">Nome do Aluno</label>
+                            <input type="text" id="student-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-age">Idade</label>
+                            <input type="number" id="student-age" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Nome do Pai/Mãe</label>
+                            <input type="text" id="parent-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-number">Número de Contato</label>
+                            <input type="tel" id="contact-number" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Endereço</label>
+                            <input type="text" id="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="attendance-status">Status de Frequência</label>
+                            <select id="attendance-status" required>
+                                <option value="">Selecione um status</option>
+                                <option value="regular">Frequência Regular</option>
+                                <option value="irregular">Frequência Irregular</option>
+                                <option value="absent">Ausente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="absence-reason">Motivo da Ausência (se aplicável)</label>
+                            <textarea id="absence-reason" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-photo">Foto do Aluno</label>
+                            <div class="photo-upload">
+                                <input type="file" id="student-photo" accept="image/*">
+                                <div id="photo-preview" class="photo-preview">
+                                    <i class="fas fa-camera"></i>
+                                    <p>Clique para adicionar uma foto</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary" id="cancel-add">Cancelar</button>
+                            <button type="submit" class="btn primary">Salvar Aluno</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for student details and status update -->
+        <div id="student-detail-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="detail-student-name">Nome do Aluno</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="student-details">
+                        <div class="student-photo-large" id="detail-student-photo">
+                            <!-- Student photo will be displayed here -->
+                        </div>
+                        <div class="student-info">
+                            <p><i class="fas fa-birthday-cake"></i> <strong>Idade:</strong> <span id="detail-student-age">0</span> anos</p>
+                            <p><i class="fas fa-user-friends"></i> <strong>Pai/Mãe:</strong> <span id="detail-parent-name">Não informado</span></p>
+                            <p><i class="fas fa-phone-alt"></i> <strong>Contato:</strong> <span id="detail-contact-number">Não informado</span></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Endereço:</strong> <span id="detail-address">Não informado</span></p>
+                            <div class="student-status" id="detail-student-status">
+                                <span class="status-badge regular">Frequência Regular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions">
+                        <button id="whatsapp-btn" class="btn secondary"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                        <button id="call-btn" class="btn secondary"><i class="fas fa-phone"></i> Ligar</button>
+                    </div>
+
+                    <div class="update-section">
+                        <h3>Atualizar Status</h3>
+                        <form id="update-status-form">
+                            <div class="form-group">
+                                <label for="update-attendance-status">Status de Frequência</label>
+                                <select id="update-attendance-status" required>
+                                    <option value="regular">Frequência Regular</option>
+                                    <option value="irregular">Frequência Irregular</option>
+                                    <option value="absent">Ausente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="update-absence-reason">Motivo da Ausência (se aplicável)</label>
+                                <textarea id="update-absence-reason" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="update-notes">Observações</label>
+                                <textarea id="update-notes" rows="3"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary">Atualizar Status</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="history-section">
+                        <h3>Histórico de Frequência</h3>
+                        <div id="attendance-history" class="history-list">
+                            <!-- Attendance history will be dynamically added here -->
+                        </div>
+                    </div>
+
+                    <div class="danger-zone">
+                        <h3>Zona de Perigo</h3>
+                        <button id="delete-student-btn" class="btn danger"><i class="fas fa-trash"></i> Excluir Aluno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content confirmation-content">
+                <div class="modal-header">
+                    <h2>Confirmação</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmation-message">Tem certeza que deseja realizar esta ação?</p>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" id="cancel-confirmation">Cancelar</button>
+                        <button type="button" class="btn danger" id="confirm-action">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

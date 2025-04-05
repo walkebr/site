@@ -1,0 +1,243 @@
+/* Estilos para a página de Perfil de Usuário */
+
+/* Seção de Perfil */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+}  
+
+/* Cards de Perfil */
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Cabeçalho do Perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.profile-avatar #profile-avatar-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-avatar #profile-avatar-image i {
+    font-size: 3rem;
+    color: white;
+}
+
+.profile-avatar #profile-avatar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#change-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: white;
+    border: 3px solid var(--card-bg);
+}
+
+.profile-info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.profile-info p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.plan-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Formulário de Perfil */
+.profile-body form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.profile-body .form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+/* Formulário de Alteração de Senha */
+#change-password-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.input-with-icon .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+/* Card de Assinatura */
+.subscription-card {
+    background: linear-gradient(135deg, var(--card-bg), var(--card-bg-alt));
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.plan-header h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.plan-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.plan-features {
+    margin-bottom: 2rem;
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--success-color);
+}
+
+.plan-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Modal de Avatar */
+.avatar-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--bg-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.avatar-preview i {
+    font-size: 3rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#avatar-upload-input {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-body form {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-body .form-actions {
+        grid-column: 1;
+    }
+    
+    .plan-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

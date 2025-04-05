@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Renovame SaaS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="dashboard-container">
+        <!-- Sidebar / Menu Lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Renovame SaaS</h2>
+                <button id="toggle-sidebar" class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <h3 id="user-name">Carregando...</h3>
+                    <span id="user-plan" class="user-plan">Plano Básico</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-users"></i>
+                            <span>Alunos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                    <li class="premium-feature" data-required-plan="PRO">
+                        <a href="notifications.html">
+                            <i class="fas fa-bell"></i>
+                            <span>Notificações</span>
+                            <span class="premium-badge"><i class="fas fa-crown"></i></span>
+                        </a>
+                    </li>
+                    <li class="premium-feature" data-required-plan="ENTERPRISE">
+                        <a href="api.html">
+                            <i class="fas fa-code"></i>
+                            <span>API</span>
+                            <span class="premium-badge"><i class="fas fa-crown"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn secondary">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <label class="switch">
+                            <input type="checkbox" id="theme-switch" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="user-dropdown">
+                        <button class="user-dropdown-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="header-user-name">Usuário</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown-content">
+                            <a href="profile.html"><i class="fas fa-user"></i> Perfil</a>
+                            <a href="settings.html"><i class="fas fa-cog"></i> Configurações</a>
+                            <a href="#" id="header-logout-btn"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Estatísticas Gerais -->
+            <section class="stats-section">
+                <h2>Visão Geral</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total de Alunos</h3>
+                            <p id="total-students-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Usuários Ativos</h3>
+                            <p id="active-users-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Assinantes Premium</h3>
+                            <p id="premium-users-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Receita Mensal</h3>
+                            <p id="monthly-revenue">R$ 0,00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gráficos e Análises -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <h2>Crescimento de Usuários</h2>
+                    <div class="chart" id="users-growth-chart">
+                        <p class="chart-placeholder">Gráfico de crescimento será exibido aqui</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h2>Distribuição de Planos</h2>
+                    <div class="chart" id="plans-distribution-chart">
+                        <p class="chart-placeholder">Gráfico de distribuição será exibido aqui</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gerenciamento de Usuários -->
+            <section class="users-management-section">
+                <div class="section-header">
+                    <h2>Usuários Recentes</h2>
+                    <a href="users.html" class="btn secondary">Ver Todos</a>
+                </div>
+                
+                <div class="users-table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Plano</th>
+                                <th>Status</th>
+                                <th>Data de Registro</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-users-table">
+                            <!-- Usuários serão adicionados dinamicamente aqui -->
+                            <tr class="placeholder-row">
+                                <td colspan="6">Carregando usuários...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

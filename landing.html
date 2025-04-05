@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovame SaaS - Sistema de Gestão de Alunos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Renovame SaaS</h1>
+            </div>
+            
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#features" class="nav-link">Funcionalidades</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Planos</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="navbar-actions">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-switch" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-sun"></i>
+                </div>
+                
+                <a href="login.html" class="btn secondary">Entrar</a>
+                <a href="login.html?tab=register" class="btn primary">Começar Grátis</a>
+            </div>
+            
+            <button class="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gerencie seus alunos com eficiência e simplicidade</h1>
+                <p>O Renovame SaaS é a solução completa para escolas dominicais, ministérios infantis e educadores que desejam acompanhar o progresso de seus alunos de forma organizada e intuitiva.</p>
+                
+                <div class="hero-actions">
+                    <a href="login.html?tab=register" class="btn primary btn-lg">Começar Agora</a>
+                    <a href="#demo" class="btn-text"><i class="fas fa-play-circle"></i> Ver demonstração</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Usuários</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">10k+</span>
+                        <span class="stat-label">Alunos Gerenciados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">4.8/5</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400" alt="Renovame SaaS Dashboard">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Funcionalidades Poderosas</h2>
+                <p>Tudo o que você precisa para gerenciar seus alunos em um só lugar</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Gerenciamento de Alunos</h3>
+                    <p>Cadastre, organize e acompanhe todos os seus alunos em um só lugar, com informações detalhadas e histórico de frequência.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Armazenamento em Nuvem</h3>
+                    <p>Seus dados sempre seguros e acessíveis de qualquer dispositivo, com backups automáticos e sincronização em tempo real.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Relatórios Detalhados</h3>
+                    <p>Visualize estatísticas e relatórios sobre frequência, crescimento e desempenho dos alunos para tomar melhores decisões.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Notificações Automáticas</h3>
+                    <p>Receba alertas sobre ausências prolongadas, aniversários e eventos importantes para manter o engajamento.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Acesso Responsivo</h3>
+                    <p>Acesse o sistema de qualquer dispositivo, com interface adaptada para smartphones, tablets e computadores.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Segurança Avançada</h3>
+                    <p>Proteção de dados com criptografia, controle de acesso por níveis e conformidade com normas de privacidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Planos que se Adaptam às Suas Necessidades</h2>
+                <p>Escolha o plano ideal para o tamanho do seu ministério ou escola</p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span>Mensal</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Anual <span class="discount-badge">Economize 20%</span></span>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Plano Gratuito -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Gratuito</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$ 0</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p>Perfeito para começar</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Até 10 alunos</li>
+                            <li><i class="fas fa-check"></i> Gerenciamento básico</li>
+                            <li><i class="fas fa-check"></i> Exportação em JSON</li>
+                            <li><i class="fas fa-check"></i> Armazenamento local</li>
+                            <li class="feature-disabled"><i class="fas fa-times"></i> Armazenamento em nuvem</li>
+                            <li class="feature-disabled"><i class="fas fa-times"></i> Relatórios avançados</li>
+                            <li class="feature-disabled"><i class="fas fa-times"></i> Notificações</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-action">
+                        <a href="login.html?tab=register" class="btn secondary btn-block">Começar Grátis</a>
+                    </div>
+                </div>
+                
+                <!-- Plano Básico -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h3>Básico</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$ 29,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p>Para ministérios em crescimento</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Até 50 alunos</li>
+                            <li><i class="fas fa-check"></i> Gerenciamento completo</li>
+                            <li><i class="fas fa-check"></i> Exportação em JSON e CSV</li>
+                            <li><i class="fas fa-check"></i> Armazenamento em nuvem</li>
+                            <li><i class="fas fa-check"></i> Backup automático</li>
+                            <li><i class="fas fa-check"></i> Suporte por email</li>
+                            <li class="feature-disabled"><i class="fas fa-times"></i> Relatórios avançados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-action">
+                        <a href="login.html?tab=register&plan=basic" class="btn primary btn-block">Escolher Plano</a>
+                    </div>
+                </div>
+                
+                <!-- Plano Profissional -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Profissional</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$ 59,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p>Para ministérios estabelecidos</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Até 200 alunos</li>
+                            <li><i class="fas fa-check"></i> Gerenciamento completo</li>
+                            <li><i class="fas fa-check"></i> Exportação em múltiplos formatos</li>
+                            <li><i class="fas fa-check"></i> Armazenamento em nuvem ilimitado</li>
+                            <li><i class="fas fa-check"></i> Backup automático diário</li>
+                            <li><i class="fas fa-check"></i> Relatórios avançados</li>
+                            <li><i class="fas fa-check"></i> Notificações automáticas</li>
+                            <li><i class="fas fa-check"></i> Suporte prioritário</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-action">
+                        <a href="login.html?tab=register&plan=pro" class="btn secondary btn-block">Escolher Plano</a>
+                    </div>
+                </div>
+                
+                <!-- Plano Empresarial -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Empresarial</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$ 99,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p>Para grandes instituições</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Alunos ilimitados</li>
+                            <li><i class="fas fa-check"></i> Todas as funcionalidades do plano Profissional</li>
+                            <li><i class="fas fa-check"></i> API para integração</li>
+                            <li><i class="fas fa-check"></i> Múltiplos administradores</li>
+                            <li><i class="fas fa-check"></i> Personalização da interface</li>
+                            <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-action">
+                        <a href="login.html?tab=register&plan=enterprise" class="btn secondary btn-block">Escolher Plano</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Depoimentos de quem já transformou a gestão de alunos com o Renovame SaaS</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"O Renovame SaaS revolucionou a forma como gerenciamos nossa escola dominical. Agora temos controle total sobre a frequência e conseguimos acompanhar cada aluno individualmente."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://via.placeholder.com/60" alt="Pastor João">
+                        </div>
+                        <div class="author-info">
+                            <h4>Pastor João Silva</h4>
+                            <p>Igreja Renovação</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"A facilidade de uso e as notificações automáticas nos ajudaram a reduzir a evasão de alunos em 40%. Conseguimos identificar rapidamente quando um aluno começa a faltar e agir proativamente."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://via.placeholder.com/60" alt="Maria Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Oliveira</h4>
+                            <p>Coordenadora de Ministério Infantil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Os relatórios detalhados nos dão insights valiosos sobre o crescimento do nosso ministério. A interface intuitiva permite que qualquer pessoa da equipe utilize o sistema sem dificuldades."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://via.placeholder.com/60" alt="Carlos Santos">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Santos</h4>
+                            <p>Líder de Jovens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre o Renovame SaaS</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como funciona o período de teste gratuito?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos 14 dias de teste gratuito em qualquer plano pago. Durante este período, você terá acesso a todas as funcionalidades do plano escolhido sem nenhum compromisso. Ao final do período, você pode optar por continuar com o plano pago ou voltar para o plano gratuito.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Posso mudar de plano a qualquer momento?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, você pode fazer upgrade ou downgrade do seu plano a qualquer momento. Se fizer upgrade, a cobrança será proporcional ao tempo restante do seu ciclo de faturamento atual. Se fizer downgrade, as novas condições serão aplicadas no próximo ciclo de faturamento.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Meus dados estão seguros?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutamente! Utilizamos criptografia de ponta a ponta e seguimos as melhores práticas de segurança da indústria. Seus dados são armazenados em servidores seguros com backups regulares. Além disso, você sempre terá a opção de exportar seus dados a qualquer momento.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Preciso instalar algum software?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não, o Renovame SaaS é uma aplicação web que funciona diretamente no seu navegador. Não é necessário instalar nenhum software adicional. Você pode acessar de qualquer dispositivo com conexão à internet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Oferecem suporte técnico?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, oferecemos suporte técnico para todos os planos. O nível de prioridade e os canais de atendimento variam conforme o plano escolhido. No plano Gratuito, oferecemos suporte via email com tempo de resposta de até 48h. Nos planos pagos, o suporte é mais rápido e inclui canais adicionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para transformar a gestão dos seus alunos?</h2>
+                <p>Comece hoje mesmo com nosso plano gratuito ou experimente todas as funcionalidades com o período de teste de 14 dias.</p>
+                <div class="cta-actions">
+                    <a href="login.html?tab=register" class="btn primary btn-lg">Começar Agora</a>
+                    <a href="#pricing" class="btn secondary">Ver Planos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Renovame SaaS</h2>
+                    <p>Sistema de Gestão de Alunos para ministérios e escolas dominicais.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#features">Funcionalidades</a></li>
+                        <li><a href="#pricing">Planos</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@renovamesaas.com</p>
+                    <p><i class="fas fa-phone"></i> (00) 0000-0000</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Brasil</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Renovame SaaS. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="landing.js"></script>
+</body>
+</html>
